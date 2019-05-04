@@ -1,9 +1,10 @@
 import java.util.Random;
 
 //the main program
-public class Main {
-
-    public static void main(String[] args) {
+public class Main 
+{    
+    public static void main(String[] args) 
+    {
         Semaphore chopsticks[];
         Philosopher philosopher[];
        
@@ -25,32 +26,7 @@ public class Main {
             philosopher[i].start();
         }
     }
-}
-class Semaphore{
-    private int value;
-
-    public Semaphore(int value)
-    {
-        this.value=value;
-
-    }
-
-    public synchronized void p()
-    {
-        while(value==0)
-        {
-            try {
-                System.out.println("chopstick is being used");
-                wait(); // waits until semaphore becomes free
-            }catch (InterruptedException e){}
-        }
-        value=value-1;
-    }
-    public synchronized void v()
-    {
-        value=value+1;
-        notify();
-    }
+    
 }
 class Philosopher extends Thread
 {
@@ -100,3 +76,4 @@ class Philosopher extends Thread
         }
     }
 }
+
