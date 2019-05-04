@@ -1,7 +1,7 @@
 import java.util.Random;
 
 //the main program
-public class DiningPhilosopher {
+public class Main {
 
     public static void main(String[] args) {
         Semaphore chopsticks[];
