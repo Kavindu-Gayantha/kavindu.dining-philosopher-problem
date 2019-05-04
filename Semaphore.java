@@ -7,7 +7,7 @@ class Semaphore{
 
     }
 
-    public synchronized void p()
+    public synchronized void drag()
     {
         while(value==0)
         {
@@ -18,7 +18,7 @@ class Semaphore{
         }
         value=value-1;
     }
-    public synchronized void v()
+    public synchronized void drop()
     {
         value=value+1;
         notify();
